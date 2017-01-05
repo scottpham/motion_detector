@@ -16,7 +16,8 @@ def index(request):
 
     context = { 'readings': readings, 'data': data}
 
-    return HttpResponse(template.render(context, request))
+    # return HttpResponse(template.render(context, request))
+    return render(request, 'sensor/index.html', context)
 
 def today(request):
     # get integer number of today
@@ -32,10 +33,4 @@ def today(request):
 
     context = { 'readings': readings, 'data': data}
 
-    return HttpResponse(template.render(context, request))
-
-
-def id(request, id):
-    response = "Looking at reading with id: %s." % id
-
-    return HttpResponse(response)
+    return render(request, 'sensor/today.html', context)

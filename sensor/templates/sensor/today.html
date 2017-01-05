@@ -1,6 +1,30 @@
-{% load static %}
+<style>
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+html {
+  font-size: 14px;
+  font-family: Helvetica, Open Sans;
+}
+
+table {
+  border-collapse: collapse;
+}
+table, th, td, th {
+  border: 1px solid gray;
+}
+
+td, th {
+  padding: 0.5em;
+}
+
+td.movement {
+  background-color: lightgreen;
+}
+
+td.noMovement {
+  background-color: Gainsboro;
+}
+
+</style>
 
 <table>
 <tr>
