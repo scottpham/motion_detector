@@ -1,0 +1,58 @@
+
+<style>
+
+html {
+  font-size: 14px;
+  font-family: Helvetica, Open Sans;
+}
+
+table {
+  border-collapse: collapse;
+}
+table, th, td, th {
+  border: 1px solid gray;
+}
+
+td, th {
+  padding: 0.5em;
+}
+
+td.movement {
+  background-color: lightgreen;
+}
+
+td.noMovement {
+  background-color: Gainsboro;
+}
+
+</style>
+
+<table>
+<tr>
+  <th>Id</th>
+  <th>Time</th>
+  <th>Result</th>
+</tr>
+
+{% for reading in readings %}
+<tr>
+<td><strong> {{ reading.id }}</strong></td>
+<td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
+
+{% if reading.value > 0 %}
+  <td class="movement">{{ reading.value }}</td>
+{% else %}
+  <td class="noMovement">{{ reading.value }}</td>
+{% endif %}
+
+
+</tr>
+{% endfor %}
+</table>
+
+
+<script>
+
+var data = {{ data | safe}}
+console.log( data )
+</script>
