@@ -1,33 +1,44 @@
 {% load static %}
+<html>
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+<head>
+    <link rel="stylesheet" href="{% static 'sensor/style.css' %}" />
+</head>
 
-<table>
-<tr>
-  <th>Id</th>
-  <th>Time</th>
-  <th>Result</th>
-</tr>
+<body>
 
-{% for reading in readings %}
-<tr>
-<td><strong> {{ reading.id }}</strong></td>
-<td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
+<h1>Past 1000 settings</h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Time</th>
+            <th>Result</th>
+        </tr>
 
-{% if reading.value > 0 %}
-  <td class="movement">{{ reading.value }}</td>
-{% else %}
-  <td class="noMovement">{{ reading.value }}</td>
-{% endif %}
+        {% for reading in readings %}
+        <tr>
+            <td><strong> {{ reading.id }}</strong></td>
+            <td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
 
-
-</tr>
-{% endfor %}
-</table>
+            {% if reading.value > 0 %}
+            <td class="movement">{{ reading.value }}</td>
+            {% else %}
+            <td class="noMovement">{{ reading.value }}</td>
+            {% endif %}
 
 
-<script>
+        </tr>
+        {% endfor %}
+    </table>
 
-var data = {{ data | safe}}
-console.log( data )
-</script>
+
+    <script>
+        var data = {{ data | safe }}
+
+        console.log(data)
+    </script>
+
+</body>
+
+
+</html>

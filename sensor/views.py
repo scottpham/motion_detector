@@ -28,7 +28,6 @@ def today(request):
 
     template = loader.get_template('sensor/index.html')
 
-
     data = serializers.serialize('json', readings)
 
     context = { 'readings': readings, 'data': data}
