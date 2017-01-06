@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Create your views here.
 def index(request):
-    readings = Reading.objects.all().order_by('-date_time')[:1000]
+    readings = Reading.objects.all().order_by('-date_time')[:2000]
 
     template = loader.get_template('sensor/index.html')
 

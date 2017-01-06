@@ -1,4 +1,4 @@
-
+/* base styles */
 html {
   font-size: 14px;
   font-family: Helvetica, Open Sans;
@@ -21,4 +21,15 @@ td.movement {
 
 td.noMovement {
   background-color: Gainsboro;
+}
+
+/* d3 styles */
+
+.line {
+  fill: maroon;
+  stroke-width: 1.5px;
+}
+
+.label {
+  font-size: 14px;
 }
