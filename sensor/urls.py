@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-    url(r'^sensor', views.index, name='index'),
-    url(r'^today', views.today, name='today')
+    # url(r'^sensor', views.index, name='index'),
+    url(r'^today', views.today, name='today'),
+    url(r'^occupied', views.occupied, name='occupied')
 ]

@@ -1,0 +1,47 @@
+{% load static %}
+
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'sensor/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'sensor/occupied.css' %}" />
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="innerHeader">
+      {% if status %}
+      <h1>The room is probably <strong>occupied</strong> right now.</h1>
+      {% else %}
+      <h1>The room is probably <strong>empty</strong> right now.</h1>
+      {% endif %}
+    </div>
+</div>
+
+<p>Last few readings:</p>
+
+<table>
+<tr>
+  <th>Time</th>
+  <th>Result</th>
+</tr>
+
+{% for reading in readings %}
+<tr>
+<td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
+
+{% if reading.value > 0 %}
+  <td class="movement">Occupied</td>
+{% else %}
+  <td class="noMovement">Unoccupied</td>
+{% endif %}
+
+</tr>
+{% endfor %}
+
+</body>
+
+<script>
+  console.log({{ data | safe }});
+</script>
+</html>

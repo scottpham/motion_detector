@@ -1,7 +1,18 @@
 /* base styles */
 html {
-  font-size: 14px;
+  font-size: 16px;
   font-family: Helvetica, Open Sans;
+  background-color: whitesmoke;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+
+
+strong {
+  color: maroon;
 }
 
 table {
@@ -22,6 +33,7 @@ td.movement {
 td.noMovement {
   background-color: Gainsboro;
 }
+
 
 /* d3 styles */
 

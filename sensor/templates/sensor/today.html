@@ -10,29 +10,8 @@
 <body>
 
 <h1>Today's readings</h1>
-  <svg width="960" height="300"></svg>
-
-<!-- <table>
-<tr>
-  <th>Id</th>
-  <th>Time</th>
-  <th>Result</th>
-</tr> -->
-
-<!-- {% for reading in readings %}
-<tr>
-<td><strong> {{ reading.id }}</strong></td>
-<td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
-
-{% if reading.value > 0 %}
-  <td class="movement">{{ reading.value }}</td>
-{% else %}
-  <td class="noMovement">{{ reading.value }}</td>
-{% endif %}
-
-
-</tr>
-{% endfor %} -->
+<p>The red lines indicate motion</p>
+  <svg width="500" height="1500"></svg>
 </table>
 
 
@@ -41,7 +20,7 @@
 var data = {{ data | safe}}
 </script>
 
-<script src="{% static 'sensor/js/graph.js' %}"></script>
+<script src="{% static 'sensor/js/vertical_graph.js' %}"></script>
 
 
 </body>
