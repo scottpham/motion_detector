@@ -8,35 +8,16 @@
 </head>
 
 <body>
+  {% include "sensor/navbar.html" %}
 
+<div class="content">
 <h1>Past 1000 Readings</h1>
 
 <svg width="960" height="300"></svg>
 
-
-    <!-- <table>
-        <tr>
-            <th>Id</th>
-            <th>Time</th>
-            <th>Result</th>
-        </tr>
-
-        {% for reading in readings %}
-        <tr>
-            <td><strong> {{ reading.id }}</strong></td>
-            <td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
-
-            {% if reading.value > 0 %}
-            <td class="movement">{{ reading.value }}</td>
-            {% else %}
-            <td class="noMovement">{{ reading.value }}</td>
-            {% endif %}
-
-
-        </tr>
-        {% endfor %} -->
     </table>
 
+</div>
 
     <script>
         var data = {{ data | safe }}

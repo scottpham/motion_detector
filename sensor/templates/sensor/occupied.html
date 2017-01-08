@@ -7,7 +7,9 @@
 </head>
 
 <body>
+  {% include "sensor/navbar.html" %}
 
+  <div class="content">
   <div class="header">
     <div class="innerHeader">
       {% if status %}
@@ -38,7 +40,7 @@
 
 </tr>
 {% endfor %}
-
+</div>
 </body>
 
 <script>
