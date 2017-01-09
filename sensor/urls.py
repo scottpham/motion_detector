@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
     # url(r'^sensor', views.index, name='index'),
     url(r'^today', views.today, name='today'),
-    url(r'^occupied', views.occupied, name='occupied')
+    url(r'^', views.occupied, name='occupied')
 ]

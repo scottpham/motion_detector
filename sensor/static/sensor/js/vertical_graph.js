@@ -1,6 +1,6 @@
 var winWidth = window.innerWidth;
 
-console.log(winWidth);
+// console.log(winWidth);
 
 // define margins and canvas
 var svg = d3.select("svg"),
@@ -13,7 +13,7 @@ var svg = d3.select("svg"),
   elWidth = svg.attr("width"),
   width = +elWidth - margin.left - margin.right;
 
-console.log(elWidth);
+// console.log(elWidth);
 
 var height = svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," +
@@ -45,7 +45,7 @@ var color = d3.scaleOrdinal()
 
 var barWidth = height / data.length;
 
-console.log(barWidth);
+// console.log(barWidth);
 
 var barGroups = g.selectAll("g")
   .data(data)

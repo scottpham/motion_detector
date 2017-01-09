@@ -87,13 +87,18 @@ td.noMovement {
 .navItem {
   padding: 15px;
   font-weight: 800;
+  border-right: 1px solid gray;
+
 }
 
-li:hover {
+.navItem:hover {
   background-color: lightgray;
+}
+
+.navItem:hover a {
   color: #222;
 }
 
-li a {
+.navbar a{
   color: #db7c24;
 }
