@@ -1,3 +1,7 @@
+var winWidth = window.innerWidth;
+
+console.log(winWidth);
+
 // define margins and canvas
 var svg = d3.select("svg"),
   margin = {
@@ -6,8 +10,12 @@ var svg = d3.select("svg"),
     bottom: 30,
     left: 70
   },
-  width = svg.attr("width") - margin.left - margin.right,
-  height = svg.attr("height") - margin.top - margin.bottom,
+  elWidth = svg.attr("width"),
+  width = +elWidth - margin.left - margin.right;
+
+console.log(elWidth);
+
+var height = svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," +
     margin.top + ")");
 

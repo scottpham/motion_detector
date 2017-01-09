@@ -1,6 +1,9 @@
 {% load static %}
 <html>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <head>
     <link rel="stylesheet" href="{% static 'sensor/style.css' %}" />
     <script src="//d3js.org/d3.v4.min.js"></script>
@@ -11,12 +14,12 @@
   {% include "sensor/navbar.html" %}
 
 
-  <div class="content">
+<div class="content">
 
 
 <h1>Today's readings</h1>
 <p>The red lines indicate motion</p>
-  <svg width="500" height="1500"></svg>
+  <svg id="graphic" width="375" height="1500"></svg>
 </table>
 </div>
 
