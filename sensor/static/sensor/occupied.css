@@ -36,6 +36,7 @@ td.movement {
 }
 
 td.noMovement {
-  background-color: Gainsboro;
-  color: palegreen;
+  /*background-color: Gainsboro;*/
+  color: black;
+  background-color: palegreen;
 }

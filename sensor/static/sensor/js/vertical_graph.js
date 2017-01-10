@@ -6,18 +6,32 @@ var winWidth = window.innerWidth;
 var svg = d3.select("svg"),
   margin = {
     top: 20,
-    right: 80,
+    right: 10,
     bottom: 30,
-    left: 70
+    left: 60
   },
-  elWidth = svg.attr("width"),
-  width = +elWidth - margin.left - margin.right;
+  // barWidth = height / data.length,
+  barWidth = 1.75;
+
+// responsive widths
+var elWidth = 350;
+
+if (winWidth < 375) {
+  elWidth = winWidth;
+}
+
+var width = +elWidth - margin.left - margin.right;
+
 
 // console.log(elWidth);
 
-var height = svg.attr("height") - margin.top - margin.bottom,
+// var height = svg.attr("height") - margin.top - margin.bottom,
+var height = barWidth * data.length,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," +
     margin.top + ")");
+
+svg.attr("height", (height + margin.top + margin.bottom))
+
 
 // sample: 2017-01-05T09:06:40.670Z
 var parseTime = d3.timeParse("%Y-%m-%dT%H:%M:%S.%L%Z");
@@ -43,9 +57,15 @@ var color = d3.scaleOrdinal()
   .range(["white", "maroon"])
   .domain([0, 1]);
 
-var barWidth = height / data.length;
+
 
 // console.log(barWidth);
+
+g.append("rect")
+  .attr("width", width)
+  .attr("height", height)
+  .attr("class", "chartBackground")
+
 
 var barGroups = g.selectAll("g")
   .data(data)
@@ -53,7 +73,6 @@ var barGroups = g.selectAll("g")
   .attr("transform", function(d, i) {
     // return `translate(0, ${i * barWidth})`
     return `translate(0, ${ y(d.fields.date_time)})`
-
   });
 
 barGroups.append("rect")
@@ -61,11 +80,18 @@ barGroups.append("rect")
     return color(d.fields.value);
   })
   .attr("height", barWidth)
-  .attr("width", width);
+  .attr("width", function(d) {
+    if (d.fields.value > 0) {
+      return width;
+    }
+  });
 
 // define yAxis here because we need to customize
 var yAxis = d3.axisLeft(y)
-  .ticks(30);
+  .tickSizeOuter(0)
+  .ticks(d3.timeMinute.every(30));
+
+
 
 // append y axis to canvas
 g.append("g")

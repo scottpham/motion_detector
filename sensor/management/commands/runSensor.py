@@ -3,9 +3,6 @@ import RPi.GPIO as GPIO
 import time
 import datetime
 from django.utils import timezone
-from apscheduler.schedulers.blocking import BlockingScheduler
-from apscheduler.schedulers.background import BackgroundScheduler
-
 from time import sleep
 
 from sensor.models import Reading

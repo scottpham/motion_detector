@@ -46,6 +46,14 @@ strong {
   font-size: 14px;
 }
 
+.chartBackground {
+  fill: Gainsboro;
+}
+
+.axis text {
+  font-size: 12px;  
+}
+
 /*navbar*/
 .navbar {
   width: 100%;
