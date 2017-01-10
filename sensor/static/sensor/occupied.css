@@ -19,4 +19,23 @@ html {
 
 table {
   background-color: white;
+  border-collapse: collapse;
+}
+
+table, th, td, th {
+  border: 1px solid gray;
+}
+
+td, th {
+  padding: 0.5em;
+}
+
+td.movement {
+  background-color: maroon;
+  color: white;
+}
+
+td.noMovement {
+  background-color: Gainsboro;
+  color: palegreen;
 }

@@ -26,10 +26,6 @@ div.content {
   flex-wrap: nowrap;
 }
 
-div.
-
-
-
 .center {
   margin: 0 auto;
 }
@@ -38,24 +34,6 @@ strong {
   color: maroon;
 }
 
-table {
-  border-collapse: collapse;
-}
-table, th, td, th {
-  border: 1px solid gray;
-}
-
-td, th {
-  padding: 0.5em;
-}
-
-td.movement {
-  background-color: lightgreen;
-}
-
-td.noMovement {
-  background-color: Gainsboro;
-}
 
 /* d3 styles */
 
