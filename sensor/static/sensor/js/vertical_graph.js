@@ -31,7 +31,7 @@ data.forEach((each) => {
 console.log(data);
 
 // define y scale
-var y = d3.scaleTime().range([0, height]);
+var y = d3.scaleTime().range([height, 0]);
 
 // define y scale domain
 y.domain(d3.extent(data, function(d) {

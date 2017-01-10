@@ -24,7 +24,7 @@ console.log(data);
 
 // define scales
 var x = d3.scaleTime().range([0, width]),
-  y = d3.scaleLinear().range([height, 0]);
+  y = d3.scaleLinear().range([0, height]);
 
 // define line
 var line = d3.line()
