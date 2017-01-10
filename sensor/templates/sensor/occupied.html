@@ -22,8 +22,8 @@
     </div>
 </div>
 
-<p>Last few readings:</p>
-
+<h3>Last few readings:</h3>
+<small>{{ readings.0.date_time | date }}</small>
 <table>
 <tr>
   <th>Time</th>
@@ -32,7 +32,7 @@
 
 {% for reading in readings %}
 <tr>
-<td>{{ reading.date_time | date:"SHORT_DATETIME_FORMAT" }}</td>
+<td>{{ reading.date_time | date:"P" }}</td>
 
 {% if reading.value > 0 %}
   <td class="movement">Occupied</td>
